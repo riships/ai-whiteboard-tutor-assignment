@@ -1,0 +1,32 @@
+{
+  "name": "ai-whiteboard-tutor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-Powered Interactive Whiteboard Tutor - Braynix Studios Assignment",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"server,client\" -c \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm run dev --workspace=packages/client",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "npm run build --workspace=packages/client",
+    "build:server": "npm run build --workspace=packages/server",
+    "start": "node packages/server/dist/index.js",
+    "start:server": "npm run start --workspace=packages/server"
+  },
+  "keywords": [
+    "ai",
+    "whiteboard",
+    "tutor",
+    "react",
+    "typescript",
+    "gemini"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
